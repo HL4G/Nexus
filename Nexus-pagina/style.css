@@ -1,0 +1,103 @@
+:root {
+  --purple: #7b6c8b;
+  --teal: #71a49b;
+  --lavender: #ebdefc;
+  --mint: #b8d8d7;
+  --accent-pink: #e3cbfb;
+  --accent-blue: #c0e4fe;
+  --accent-green: #cff3d9;
+  --text-dark: #4a4062;
+  --text-light: #f5f2fa;
+  --text-heading-dark: #a9d6c8;
+  --font-heading: 'Quicksand', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --radius: 18px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  line-height: 1.5;
+  background: linear-gradient(to bottom, var(--purple) 0%, var(--purple) 6%, var(--teal) 14%, var(--teal) 34%, var(--purple) 42%, var(--purple) 50%, var(--teal) 58%, var(--teal) 68%, var(--purple) 76%, var(--purple) 84%, var(--teal) 90%, var(--teal) 96%, var(--purple) 100%);
+}
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+.product-card, .ayuda-card, .tecnica-card, .audio-btn, .nav-btn, .btn-comprar, .btn-secundario, .btn-whatsapp {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover, .ayuda-card:hover, .ayuda-card:focus-visible, .tecnica-card:hover, .audio-btn:hover, .audio-btn:focus-visible, .nav-btn:hover, .nav-btn:focus-visible, .btn-comprar:hover, .btn-comprar:focus-visible, .btn-secundario:hover, .btn-secundario:focus-visible, .btn-whatsapp:hover, .btn-whatsapp:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.site-header { padding: 32px 24px 56px; text-align: center; }
+.logo { width: 140px; height: auto; border-radius: 50%; background: #000; padding: 6px; }
+.logo-wrap { display: flex; justify-content: center; margin-bottom: 12px; }
+.eyebrow { color: var(--text-heading-dark); font-family: var(--font-heading); font-weight: 700; letter-spacing: 0.3px; font-size: 1.1rem; max-width: 320px; margin: 0 auto 28px; }
+.nav-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.nav-btn { font-family: var(--font-heading); font-weight: 600; background: var(--lavender); color: var(--text-dark); border: none; padding: 14px 32px; border-radius: 999px; cursor: pointer; }
+.nav-btn:focus-visible { outline: 3px solid var(--accent-blue); outline-offset: 2px; }
+
+.section { padding: 56px 24px; opacity: 1; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.section-title { text-align: center; font-size: 1.8rem; margin-bottom: 40px; }
+.section-subtitle { text-align: center; margin-top: -24px; margin-bottom: 32px; opacity: 0.85; }
+.section--ayuda-intro .section-title, .section--diario .section-title { color: var(--text-heading-dark); }
+.section--diario .section-subtitle { color: var(--text-light); }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.product-card { background: var(--lavender); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+.product-card h3 { font-size: 1.2rem; }
+.product-card p { font-size: 0.95rem; opacity: 0.85; flex-grow: 1; }
+.product-image.ph { height: 140px; border-radius: 12px; background: repeating-linear-gradient(45deg, var(--mint), var(--mint) 10px, #ffffff 10px, #ffffff 20px); display: flex; align-items: center; justify-content: center; color: var(--text-dark); font-size: 0.85rem; opacity: 0.6; order: -1; }
+.btn-comprar { font-family: var(--font-heading); font-weight: 600; background: var(--purple); color: var(--text-light); border: none; padding: 10px 20px; border-radius: 999px; cursor: pointer; align-self: flex-start; transition: opacity 0.15s ease; }
+.btn-comprar:hover { opacity: 0.85; }
+
+.ayuda-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.ayuda-card { background: var(--lavender); border-radius: var(--radius); padding: 28px; text-decoration: none; color: var(--text-dark); display: block; }
+.ayuda-card h3 { margin-bottom: 8px; }
+.ayuda-card p { font-size: 0.95rem; opacity: 0.85; }
+
+.tecnicas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.tecnica-card { background: var(--lavender); border-radius: var(--radius); padding: 28px; text-align: center; }
+.tecnica-card p { font-size: 0.9rem; opacity: 0.85; }
+.tecnica-card--interactiva { background: var(--accent-blue); }
+.breathing-circle { width: 110px; height: 110px; border-radius: 50%; background: var(--purple); color: var(--text-light); display: flex; align-items: center; justify-content: center; margin: 24px auto; font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; text-align: center; }
+.btn-secundario { font-family: var(--font-heading); font-weight: 600; background: var(--purple); color: var(--text-light); border: none; padding: 10px 24px; border-radius: 999px; cursor: pointer; }
+
+.breathing-overlay { position: fixed; inset: 0; background: #000; z-index: 999; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.breathing-overlay[hidden] { display: none; }
+.breathing-close { position: absolute; top: 24px; right: 24px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.4); color: #fff; font-family: var(--font-heading); font-weight: 600; padding: 8px 20px; border-radius: 999px; cursor: pointer; }
+.breathing-close:hover, .breathing-close:focus-visible { background: rgba(255, 255, 255, 0.12); }
+
+.timer-wrap { position: relative; width: 260px; height: 260px; }
+.timer-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
+.timer-ring__bg { fill: none; stroke: rgba(255, 255, 255, 0.15); stroke-width: 3; }
+.timer-ring__progress { fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: round; }
+.timer-wrap__text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: var(--font-heading); }
+.breathing-overlay__fase { font-size: 1.3rem; font-weight: 600; margin-bottom: 6px; }
+.breathing-overlay__tiempo { font-size: 2.6rem; font-weight: 700; }
+
+.particles { position: absolute; inset: 0; pointer-events: none; }
+.particle { position: absolute; bottom: -20px; left: var(--x); width: var(--tam); height: var(--tam); background: #fff; border-radius: 50%; opacity: 0.85; animation: subir var(--duracion) ease-in forwards; animation-delay: var(--retraso); }
+@keyframes subir { to { transform: translateY(-110vh); } }
+
+.white-cover { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; transition: opacity 1.2s ease-in; }
+.white-cover.cubrir { opacity: 1; }
+
+.diario-textarea { display: block; width: 100%; max-width: 700px; margin: 0 auto; min-height: 260px; padding: 20px 24px; border: none; border-radius: var(--radius); background: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, #d8cdee 32px), var(--lavender); font-family: var(--font-body); font-size: 1rem; line-height: 32px; color: var(--text-dark); resize: vertical; }
+.diario-textarea:focus-visible { outline: 3px solid var(--accent-green); }
+.diario-estado { text-align: center; margin-top: 10px; font-size: 0.85rem; color: var(--text-light); min-height: 1.2em; }
+
+.audio-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; max-width: 700px; margin: 0 auto; }
+.audio-btn { font-family: var(--font-heading); font-weight: 600; background: var(--purple); color: var(--text-light); border: none; padding: 18px 20px; border-radius: 50%; width: 110px; height: 110px; cursor: pointer; transition: background 0.15s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.audio-btn.activo { background: var(--accent-green); color: var(--text-dark); }
+
+.site-footer { color: var(--text-light); text-align: center; padding: 48px 24px; }
+.btn-whatsapp { display: inline-block; margin-top: 16px; background: var(--accent-green); color: var(--text-dark); font-family: var(--font-heading); font-weight: 600; text-decoration: none; padding: 14px 32px; border-radius: 999px; }
